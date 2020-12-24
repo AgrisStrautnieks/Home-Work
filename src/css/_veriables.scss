@@ -1,0 +1,71 @@
+
+/* COLORS */
+$itemsParagraphEmailTerms: #6A707B;
+$ItemsHover: #4066A5;
+$navItemsFocus: #233759;
+$checkboxFormBorder: #E3E3E4;
+$backgroundColor: #FFFFFF;
+$ErrorMessage: #FF0000;
+
+@mixin paragraphEmailTerms {
+  color: $itemsParagraphEmailTerms;
+  opacity: 0.5;
+}
+
+/* FONTS */
+$Arial: Arial, sans-serif;
+$Georgia: Georgia, sans-serif;
+
+/* HOVER ICONS */
+$iconFacebook: #4267B2;
+$iconInstagram: #C13584;
+$iconTwitter: #1DA1F2;
+$iconYoutube: #FF0000;
+
+@mixin hoverSocialIcons {
+  box-shadow: 0 20px 40px rgba(19, 24, 33, 0.3);
+  color: #FFFFFF;
+}
+
+/* PRESSED ICONS */
+$iconFacebookPressed: #2F4A80;
+$iconInstagramPressed: #8F2762;
+$iconTwitterPressed: #177FBF;
+$iconYoutubePressed: #CC0000;
+
+
+
+@mixin displayGrid12columns {
+  display: grid;
+  grid-template-columns: repeat(12, [col] 1fr);
+}
+@mixin centerItems {
+  align-self: center;
+  justify-self: center;
+}
+
+@mixin backgroundSize {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin socialIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 11px;
+  list-style: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid $checkboxFormBorder;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+@mixin socialOpacityAndColor {
+  color: #FFFFFF;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}

@@ -1,0 +1,354 @@
+@import "../css/veriables";
+@import "../css/media";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $Arial;
+  color: #131821;
+  background: #FFFFFF;
+}
+.main {
+  height: 100vh;
+  @include displayGrid12columns;
+}
+.content {
+  grid-column: 1 / 5;
+}
+.image {
+  grid-column: 5 / 13;
+  background-image: url("../img/image_summer.png");
+  @include backgroundSize;
+}
+/* NAVIGATION PART */
+.header {
+  padding: 40px 40px 0;
+}
+.nav {
+  @include displayGrid12columns;
+  grid-template-rows: 40px;
+}
+.header-logo {
+  grid-column: 1 / 5;
+  background-image: url("../img/logo_pineapple.png");
+  @include backgroundSize;
+  height: 29px;
+  background-size: contain;
+}
+.list-items {
+  grid-column: 6 / 13;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.items {
+  font-size: 10px;
+  padding: 0 12px 6px 12px;
+}
+.items a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $itemsParagraphEmailTerms;
+}
+.items a:hover {
+  color: $ItemsHover;
+}
+.items a:focus {
+  color: $navItemsFocus;
+}
+/* NAVIGATION PART END */
+/* HEADING PART */
+.heading {
+  @include displayGrid12columns;
+  align-items: center;
+  justify-content: center;
+  padding-top: 135px;
+}
+.heading-title {
+  grid-column: 3 / 13;
+  font-family: $Georgia;
+  font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  font-weight: 400;
+  @include centerItems;
+  justify-self: flex-start;
+}
+.heading-paragraph {
+  grid-column: 3 / 11;
+  font-size: calc(4px + 6 * ((100vw - 320px) / 680));
+  font-weight: 400;
+  @include paragraphEmailTerms;
+  @include centerItems;
+  justify-self: flex-start;
+  padding-top: 25px;
+}
+/* HEADING PART END */
+/* FORM PART */
+
+.form-wrapper {
+  @include displayGrid12columns;
+  padding-left: 15px;
+}
+.form {
+  grid-column: 2 / 13;
+  padding-top: 44px;
+}
+.email {
+  padding: 17px 33px;
+  border: 1px solid $checkboxFormBorder;
+  width: 100%;
+  outline: none;
+}
+.email::placeholder {
+  color: $itemsParagraphEmailTerms;
+  opacity: 0.5;
+}
+.email-span {
+  position: relative;
+}
+.email-span::before {
+  content: '';
+  background: $ItemsHover;
+  width: 5px;
+  height: 51px;
+  position: absolute;
+  top: -16px;
+}
+.submit {
+  position: absolute;
+  top: -16px;
+  right: -58px;
+  bottom: -18px;
+  padding: 17px 33px;
+  border: 1px solid $checkboxFormBorder;
+  border-left: none;
+  outline: none;
+  background: $backgroundColor;
+  cursor: pointer;
+}
+.arrow {
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  background-size: 17px;
+  position: relative;
+  top: -2px;
+  left: 8px;
+}
+.arrow:before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: solid $itemsParagraphEmailTerms;
+  opacity: 0.4;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  vertical-align: middle;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  position: relative;
+  left: 16px;
+}
+.arrow:after {
+  width: 16px;
+  height: 2px;
+  background: $itemsParagraphEmailTerms;
+  opacity: 0.4;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+}
+form.form:hover input {
+  border-color:  $ItemsHover;
+  box-shadow: 0 30px 40px rgba(19, 24, 33, 0.06);
+}
+form.form:hover button {
+  border-color:  $ItemsHover;
+  box-shadow: 0 30px 40px rgba(19, 24, 33, 0.06);
+}
+form.form:hover .arrow:before {
+  border-color: $ItemsHover;
+  opacity: 1;
+}
+form.form:hover .arrow:after {
+  background: $ItemsHover;
+  opacity: 1;
+}
+form.form:active input {
+  border: 1px solid $checkboxFormBorder;
+}
+
+form.form:active button {
+  border-color:  $checkboxFormBorder;
+}
+form.form:active .arrow:before {
+  border-color: $checkboxFormBorder;
+  opacity: 0.4;
+}
+form.form:active .arrow:after {
+  background: $checkboxFormBorder;
+  opacity: 0.4;
+}
+
+/*  FORM VALIDATION */
+.form p {
+  color: $ErrorMessage;
+  padding: 5px 0 0 2px;
+}
+
+/* CHECKMARK */
+
+.relative {
+  position: relative;
+  top: 40px;
+  left: 38px;
+  width: 264px;
+  border-bottom: 1px solid $checkboxFormBorder;
+  padding-bottom: 34px;
+}
+.checkbox {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $checkboxFormBorder;
+  border-radius: 3px;
+  //-moz-appearance:none;
+  //-webkit-appearance:none;
+}
+//.checkbox:focus {
+//  background: $ItemsHover;
+//}
+.checkbox-label {
+  position: relative;
+  top: -3px;
+  left: 12px;
+  font-family: $Arial;
+  font-size: 12px;
+  font-weight: 400;
+  color: $itemsParagraphEmailTerms;
+}
+.checkbox-label a {
+  color: #131821;
+}
+
+/* POSITION FOR SOCIAL ICONS */
+
+.social-icons {
+  position: relative;
+  top: 80px;
+}
+.social-icon-list {
+  @include displayGrid12columns;
+  grid-gap: 12px;
+}
+.social-facebook {
+  grid-column: 5 / 6;
+  @include socialIcons;
+}
+.social-instagram {
+  grid-column: 6 / 7;
+  @include socialIcons;
+}
+.social-twitter {
+  grid-column: 7 / 8;
+  @include socialIcons;
+}
+.social-youtube {
+  grid-column: 8 / 9;
+  @include socialIcons;
+}
+.social .react-icon {
+  font-size: 11px;
+  color: #131821;
+  opacity: 0.3;
+}
+.social:hover .react-icon path {
+  color: #FFFFFF;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+/* HOVER ICONS */
+
+.social-facebook:hover .facebook {
+  background: $iconFacebook;
+  @include socialOpacityAndColor;
+}
+.social-instagram:hover .instagram {
+  background: $iconInstagram;
+  @include socialOpacityAndColor;
+}
+.social-twitter:hover .twitter {
+  background: $iconTwitter;
+  @include socialOpacityAndColor;
+}
+.social-youtube:hover .youtube {
+  background: $iconYoutube;
+  @include socialOpacityAndColor;
+}
+
+.social-facebook:hover {
+  @include hoverSocialIcons;
+  background: $iconFacebook;
+  border-color: $iconFacebook;
+}
+.social-instagram:hover {
+  @include hoverSocialIcons;
+  background: $iconInstagram;
+  border-color: $iconInstagram;
+}
+.social-twitter:hover {
+  @include hoverSocialIcons;
+  background: $iconTwitter;
+  border-color: $iconTwitter;
+}
+.social-youtube:hover {
+  @include hoverSocialIcons;
+  background: $iconYoutube;
+  border-color: $iconYoutube;
+}
+
+/* PRESSED ICONS */
+
+.social-facebook:active .react-icon {
+  background: $iconFacebookPressed;
+  @include hoverSocialIcons;
+}
+.social-instagram:active .react-icon {
+  background: $iconInstagramPressed;
+  @include hoverSocialIcons;
+}
+.social-twitter:active .react-icon {
+  background: $iconTwitterPressed;
+  @include hoverSocialIcons;
+}
+.social-youtube:active .react-icon {
+  background: $iconYoutubePressed;
+  @include hoverSocialIcons;
+}
+
+.social-facebook:active {
+  @include hoverSocialIcons;
+  background: $iconFacebookPressed;
+  border-color: $iconFacebookPressed;
+}
+.social-instagram:active {
+  @include hoverSocialIcons;
+  background: $iconInstagramPressed;
+  border-color: $iconInstagramPressed;
+}
+.social-twitter:active {
+  @include hoverSocialIcons;
+  background: $iconTwitterPressed;
+  border-color: $iconTwitterPressed;
+}
+.social-youtube:active {
+  @include hoverSocialIcons;
+  background: $iconYoutubePressed;
+  border-color: $iconYoutubePressed;
+}
+
+
+
+
+
